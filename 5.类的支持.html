@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			//类的定义
+			class Animal{
+				//Es6中新型构造器
+				constructor(name){
+					this.name = name;
+				}
+				sayName(){
+					console.log("my name is "+this.name);
+				}
+			}
+			
+			//类的继承
+			class Programmer extends Animal {
+				constructor(name){
+					//直接调用父类构造器进行初始化
+					super(name);
+					//super关键字，他指代的是父类的实例（父类的this对象），子类必须在constructor方法中去调用
+					//super方法否则新的实例时会报错，这是因为子类没有自己的this对象。
+				}
+				program(){
+					console.log("I'm coding...");
+				}
+			}
+			
+			//测试我们的类
+			var animal = new Animal('dummy');
+			animal.sayName();
+			wayou = new Programmer('wayou');
+			wayou.sayName();
+			wayou.program();
+			
+		</script>
+	</body>
+</html>

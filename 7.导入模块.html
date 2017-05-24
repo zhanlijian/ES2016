@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		Google公司的Traceur转码，也可以将ES6转码为ES5代码
+		Traceur允许将ES6代码直接插入网页
+		第一个是加载Traceur库文件
+		第二个和第三个是将这个库文件用于浏览器环境
+		<script src="js/traceur.js"></script>
+		<script src="js/BrowserSystem.js"></script>
+		<script src="js/bootstrap.js"></script>
+		
+		
+		模块的功能主要是由export 和import 组成。
+		每个模块都有自己的单独的作用域，模块之间的相互关系是通过export来规定模块对外暴露的接口
+		通过import来引用其他模块提供的接口。
+		<script type="module">
+			import {userName,age,weight} from './variable.js';
+			show(userName+"--------"+age+"--------"+weight);
+			import {firstName,lastName,year} from './variable.js';
+			show(firstName+"--------"+lastName+"--------"+year);
+			
+			import {foo,newKoo} from './exfunc.js';
+			foo();
+			newKoo();
+			
+			
+			//data是可以随便定义的，用来接收default.js导出的东西
+			import func from './default.js';
+			func("hello");
+			//show(func);
+			
+			import data from './default2.js';
+			console.log(data);
+			
+			
+		</script>
+	</body>
+</html>

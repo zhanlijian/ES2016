@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>6.增强对象字面量.</title>
+	</head>
+	总结：
+	1.定义方法可以不用function 关键字
+	2.可以在对象字面量定义原型
+	3.直接调用父类方法
+	<body>
+		<script>
+		//通过对象字面量创建对象。
+			var human = {
+				breathe(){
+					console.log("breathing....");
+				}
+			}
+			
+			var worker = {
+				__proto__:human,
+				company:"freeLancer",
+				work(){
+					console.log('working...');
+				}
+			}
+			
+			
+			human.breathe();
+			worker.breathe();
+			worker.work();
+			
+			
+			
+		</script>
+	</body>
+</html>

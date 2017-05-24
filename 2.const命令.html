@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>const命令</title>
+	</head>
+	<body>
+		<script>
+			//const命令 比较直观，是一个只读的常量，一旦声明，常量的值就不能改变。
+			//const PI = 3.1415;
+			//PI = 3;
+			//console.log(PI); //报错
+			
+			
+			//const 一旦声明变量，就立即初始化，不能留到后面再去赋值
+			//const foo;
+			//console.log(foo);  //报错
+			
+			
+			//const命令声明的常量也是与let命令一样，只在代码块作用域内有效
+			if(true){
+				const MAX = 5;
+				console.log(MAX);  //5
+			}
+			//console.log(MAX);  //报错
+			
+			
+			//const声明的常量，跟let一样不允许重复声明。
+			var message = "hello";
+			let age = 5;
+			
+			const message = "GoodDay";
+			const age = 12;
+			
+			console.log(message)
+			console.log(age)
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

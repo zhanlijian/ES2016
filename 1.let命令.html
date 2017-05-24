@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>let命令</title>
+	</head>
+	<body>
+		<script>
+		//ES6新增了let命令，它的用法类似于var 但是所声明的变量，只在let命令所在的代码块里有效。
+			{
+				let a = 10;
+				var b = 1;
+				console.log(a);  // 10  有效
+			}
+			console.log(b)//  1
+			//console.log(a); // a is not defined  无效
+			
+			//变量提升
+			console.log(foo);
+			var foo = 2;
+			
+			//不存在变量提升，所以变量一定要在声明之后使用，否则报错。
+			//console.log(bar);
+			//let bar = 3;
+			
+			
+			//不允许重复声明，let不允许在相同的作用域内去重复声明一个变量，因此，不能在函数内部重复声明参数
+			//var message = "hello1"
+			//let message = "hello2"
+			//console.log(message);
+			
+			/*function  func(arg){
+				let arg;  //报错
+			}*/
+			
+			function func(arg){
+				{
+					let arg;  //不报错
+				}
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>
